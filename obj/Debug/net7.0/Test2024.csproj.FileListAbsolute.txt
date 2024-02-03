@@ -1,0 +1,15 @@
+C:\Users\MegaNotik\source\repos\Test2024\bin\Debug\net7.0\Test2024.exe
+C:\Users\MegaNotik\source\repos\Test2024\bin\Debug\net7.0\Test2024.deps.json
+C:\Users\MegaNotik\source\repos\Test2024\bin\Debug\net7.0\Test2024.runtimeconfig.json
+C:\Users\MegaNotik\source\repos\Test2024\bin\Debug\net7.0\Test2024.dll
+C:\Users\MegaNotik\source\repos\Test2024\bin\Debug\net7.0\Test2024.pdb
+C:\Users\MegaNotik\source\repos\Test2024\obj\Debug\net7.0\Test2024.csproj.AssemblyReference.cache
+C:\Users\MegaNotik\source\repos\Test2024\obj\Debug\net7.0\Test2024.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\MegaNotik\source\repos\Test2024\obj\Debug\net7.0\Test2024.AssemblyInfoInputs.cache
+C:\Users\MegaNotik\source\repos\Test2024\obj\Debug\net7.0\Test2024.AssemblyInfo.cs
+C:\Users\MegaNotik\source\repos\Test2024\obj\Debug\net7.0\Test2024.csproj.CoreCompileInputs.cache
+C:\Users\MegaNotik\source\repos\Test2024\obj\Debug\net7.0\Test2024.dll
+C:\Users\MegaNotik\source\repos\Test2024\obj\Debug\net7.0\refint\Test2024.dll
+C:\Users\MegaNotik\source\repos\Test2024\obj\Debug\net7.0\Test2024.pdb
+C:\Users\MegaNotik\source\repos\Test2024\obj\Debug\net7.0\Test2024.genruntimeconfig.cache
+C:\Users\MegaNotik\source\repos\Test2024\obj\Debug\net7.0\ref\Test2024.dll
