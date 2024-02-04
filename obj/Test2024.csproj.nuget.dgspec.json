@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\MegaNotik\\source\\repos\\Test2024\\Test2024.csproj": {}
+    "C:\\Users\\MegaNotik\\Documents\\GitHub\\TestConsoleRPG\\TestConsoleRPG\\Test2024.csproj": {}
   },
   "projects": {
-    "C:\\Users\\MegaNotik\\source\\repos\\Test2024\\Test2024.csproj": {
+    "C:\\Users\\MegaNotik\\Documents\\GitHub\\TestConsoleRPG\\TestConsoleRPG\\Test2024.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\MegaNotik\\source\\repos\\Test2024\\Test2024.csproj",
+        "projectUniqueName": "C:\\Users\\MegaNotik\\Documents\\GitHub\\TestConsoleRPG\\TestConsoleRPG\\Test2024.csproj",
         "projectName": "Test2024",
-        "projectPath": "C:\\Users\\MegaNotik\\source\\repos\\Test2024\\Test2024.csproj",
+        "projectPath": "C:\\Users\\MegaNotik\\Documents\\GitHub\\TestConsoleRPG\\TestConsoleRPG\\Test2024.csproj",
         "packagesPath": "C:\\Users\\MegaNotik\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\MegaNotik\\source\\repos\\Test2024\\obj\\",
+        "outputPath": "C:\\Users\\MegaNotik\\Documents\\GitHub\\TestConsoleRPG\\TestConsoleRPG\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

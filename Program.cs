@@ -1,94 +1,57 @@
-﻿using System.Text;
+﻿using System.Runtime.CompilerServices;
+using System.Text;
 
 namespace Test2024
 {
-    abstract class LocationState
+    abstract class Locations
     {
-        protected Place place;
-        public Place Plase { set => place = value; }
-       // public abstract void NextState();
-        public virtual void PreviousState()
-        {
-            Console.WriteLine("Повернення до притулку...");
-        }
-        public virtual void Forest()
-        {
-            Console.WriteLine("Вихід в ліс...");
-        }
-        public virtual void Dungeon() 
-        {
-            Console.WriteLine("Вхід до підземелля...");
-        }
-       
+        public abstract void PrintLocation();
+        public abstract void ReturnToTheShelter();
     }
 
-    class Place
+    class Shelter : Locations
     {
-        private LocationState localstate;
-        public Place(LocationState localstate) => SetState(localstate);
-
-        public void SetState(LocationState ls)
+        public override void PrintLocation()
         {
-            localstate = ls;
-            localstate.Plase = this;
+            Console.WriteLine("Ти в притулку!");
         }
-        //public void NextState()
-        //{
-        //    localstate.NextState();
-        //}
-        public void PreviousState()
+
+        public override void ReturnToTheShelter()
         {
-            localstate.PreviousState();
+            Console.WriteLine("Ти вже в притулку!");
         }
     }
-    class Dungeon : LocationState
+
+    class Dungeon : Locations
     {
-        //public override void NextState()
-        //{
-        //    Console.WriteLine("из подземки в в лес");
-        //    place.SetState(new Forest());
-        //}
-        public override void PreviousState()
+        public override void PrintLocation()
         {
-            base.PreviousState();
+            Console.WriteLine("Ти в підземкі!");
+        }
+        public override void ReturnToTheShelter()
+        {
+            Console.WriteLine("Повернення до притулку");
         }
     }
-   
-    class Forest : LocationState 
+    class Forest : Locations
     {
-
-        //public override void NextState()
-        //{
-        //    Console.WriteLine("из леса в убежище");
-        //    place.SetState(new Shelter());
-        //}
-        public override void PreviousState()
+        public override void PrintLocation()
         {
-            base.PreviousState();
+            Console.WriteLine("Ти в лісі!");
         }
-    } 
-    class Shelter : LocationState
-    {
-        public override void Dungeon()
+        public override void ReturnToTheShelter()
         {
-            base.Dungeon();
+            Console.WriteLine("Повернення до притулку");
         }
-        public override void Forest()
-        {
-            base.Forest();
-        }
-        public override void PreviousState()
-        {
-            Console.WriteLine("подземка");
-            place.PreviousState();
-        }
-    } 
+    }
     class Question
     {
         private string a1 = "І мені також!", a2 = "AAAAAAAAAAAAAA";
         private string reply1 = "Давай!", reply2 = "НЄЄЄЄЄЄЄЄЄ";
         private string responce1 = "Давай почнем гру!", responce2 = "Ем...давай грати?";
-        private string[] work = { "Похід до підземелля", "Похід в ліс", "Повернення до притулку" };    
+        private string[] work = { "Похід до підземелля", "Похід в ліс", "Повернення до притулку" };
+     
+        
         public void CheckAnswer()
         {
             WriteChoiceAnswer(a1, a2);
@@ -96,10 +59,6 @@ namespace Test2024
             int a = int.Parse(Console.ReadLine());
 
             WriteProgramResponse(responce1, responce2, a);
-           /* if(a == 1)
-                Console.WriteLine("Давай почнем гру!");
-            if(a == 2)
-                Console.WriteLine("Ем...давай грати?");*/
 
             WriteChoiceAnswer(reply1, reply2);
 
@@ -117,28 +76,30 @@ namespace Test2024
             WriteChoiceActions();
             int i = int.Parse(Console.ReadLine());
 
-            // Place place = new Place(new Shelter());
-            LocationState state = new Shelter();
-                switch(i)
-                {
-                    case 1:
-                        //Console.WriteLine("Ти в пошуках моба");
-                        state.Dungeon();
-                        break;
-                    case 2:
-                        //Console.WriteLine("Ти пошуках матеріала для крафта");
-                        state.Forest();
-                        break;
-                    case 3:
-                        //Console.WriteLine("Ти повернувся в притулок де є вогнище, і твоє хп відновилось!");
-                        Console.WriteLine("Ти й так в притулку!");
-                        Thread.Sleep(1000);
-                        WriteChoiceActions();
-                        break; 
-                    default:
-                        Console.WriteLine("Невірна цифра!");
-                        break;
-                }
+            Locations[] locations = new Locations[] { new Dungeon(), new Forest(), new Shelter(),};
+            Locations local = null;
+            
+            switch (i)
+            {
+
+                case 1:
+                    //locations[0].PrintLocation();
+                    local = new Dungeon();
+                    break;
+                case 2:
+                    //locations[1].PrintLocation();
+                    local = new Forest();
+                    break;
+                case 3:
+                    Console.WriteLine("Ти й так в притулку!");
+                    Thread.Sleep(1000);
+                    WriteChoiceActions();
+                    break;
+                default:
+                    Console.WriteLine("Невірна цифра!");
+                    break;
+            }
+            local.PrintLocation();
 
         }
         private void WriteChoiceActions()
@@ -162,14 +123,14 @@ namespace Test2024
             }
             Console.WriteLine("\n");
         }
-        private void WriteChoiceAnswer(string a1, string a2)
+        private void WriteChoiceAnswer(string answer1, string answer2)
         {
-            Console.WriteLine($"\n1:{a1}\n2:{a2}\n");
+            Console.WriteLine($"\n1:{answer1}\n2:{answer2}\n");
         }
-        private void WriteProgramResponse(string r1, string r2, int a)
+        private void WriteProgramResponse(string reply1, string reply2, int answerNumber)
         {
-            if(a == 1) Console.WriteLine(r1);
-            if(a == 2) Console.WriteLine(r2);
+            if(answerNumber == 1) Console.WriteLine(reply1);
+            if(answerNumber == 2) Console.WriteLine(reply2);
         }
     }
     class Player
@@ -221,7 +182,7 @@ namespace Test2024
             string playerName = Console.ReadLine();
             Player player = new();
             player.Name = playerName;
-
+            Locations iloc = new Shelter();
         }       
         public static void RedLine()
         {
